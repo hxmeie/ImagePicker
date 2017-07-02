@@ -44,7 +44,7 @@ public abstract class ImagePreviewBaseActivity extends ImageBaseActivity {
         isFromItems = getIntent().getBooleanExtra(ImagePicker.EXTRA_FROM_ITEMS, false);
         //判断是不是点击预览按钮进入此界面的
         if (isFromItems) {
-            mImageItems = imagePicker.getSelectedImages();
+            mImageItems = getIntent().getParcelableArrayListExtra(ImagePicker.EXTRA_FROM_ITEMS);
         } else {
             mImageItems = imagePicker.getCurrentImageFolderItems();
         }
